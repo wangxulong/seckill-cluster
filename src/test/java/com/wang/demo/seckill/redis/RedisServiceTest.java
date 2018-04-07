@@ -15,7 +15,29 @@ public class RedisServiceTest {
     private RedisService redisService;
     @Test
     public void set() throws Exception {
-        redisService.set();
+        redisService.set("ddd","123");
     }
+
+    @Test
+    public void setEx() throws Exception {
+        redisService.setEx("wxl","1",10);
+    }
+
+    @Test
+    public void get() throws Exception {
+        System.out.println(redisService.get("wxl"));
+    }
+
+    @Test
+    public void expire() throws Exception {
+    }
+
+    @Test
+    public void delete() throws Exception {
+        redisService.delete("ddd");
+    }
+
+
+
 
 }
