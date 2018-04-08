@@ -2,6 +2,7 @@ package com.wang.demo.seckill.util;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
@@ -95,17 +96,20 @@ public class JsonUtil {
 
 
 
-    public static void main(String[] args) {
-        User user = new User();
-        user.setId(123);
-        User user1 = new User();
-        user.setId(222);
-        user1.setName("王旭龙");
-        List<User> users = new ArrayList<>();
-        users.add(user);
-        users.add(user1);
-        String usersStr = JsonUtil.obj2StringPretty(user);
-        log.info(usersStr);
+    public static void main(String[] args) throws IOException {
+//        User user = new User();
+//        user.setId(123);
+//        User user1 = new User();
+//        user.setId(222);
+//        user1.setName("王旭龙");
+//        List<User> users = new ArrayList<>();
+//        users.add(user);
+//        users.add(user1);
+//        String usersStr = JsonUtil.obj2StringPretty(user);
+//        log.info(usersStr);
+        String intTest = objectMapper.readValue("123",String.class);
+        System.out.println(intTest);
+        System.out.println(string2Obj(intTest,Integer.class));
 
 
 
